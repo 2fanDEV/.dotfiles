@@ -1,0 +1,75 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+
+format = """($container$fill$git_metrics\n)$cmd_duration\
+$hostname\
+$localip\
+$username\
+$directory"""
+
+right_format = """
+$kubernetes
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$c\
+$deno\
+$dotnet\
+$golang\
+$helm\
+$haskell\
+$java\
+$python\
+$rust\
+$lua\
+$memory_usage\
+$aws\
+$status\
+$os\
+$battery\
+$time
+"""
+
+[battery]
+format = "[ $percentage $symbol]($style)"
+full_symbol = "█"
+charging_symbol = "[↑](italic bold green)"
+discharging_symbol = "↓"
+unknown_symbol = "░"
+empty_symbol = "▃"
+
+[[battery.display]]
+threshold = 20
+style = "italic #FF0000"
+
+[[battery.display]]
+threshold = 60
+style = "italic #5E00FF"
+
+[[battery.display]]
+threshold = 100
+style = "italic #00FF00"
+
+[directory]
+home_symbol = "/home"
+style = "#FFBC00"
+
+[username]
+format = '[\[$user\]]($style) on '
+style_root = 'bold red'
+style_user = 'bold #7B6CFF'
+show_always = true
+aliases = { "root" = "ROOT-ADMIN", "tufan" = '2fan' }
+
+[package]
+disabled = true
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%R"
+utc_time_offset = "local"
+style = "italic dimmed white"
