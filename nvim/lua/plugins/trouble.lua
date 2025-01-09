@@ -1,9 +1,6 @@
 return {
-	"folke/trouble.nvim",
-  opts = {
-		focus = true,
-		follow = true,
-	}, -- for default options, refer to the configuration section for custom setup.
+  "folke/trouble.nvim",
+  opts = {}, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
   keys = {
     {
@@ -36,19 +33,5 @@ return {
       "<cmd>Trouble qflist toggle<cr>",
       desc = "Quickfix List (Trouble)",
     },
-		{
-			"<leader>tt",
-			"<cmd>Trouble next<cr>",
-			desc = "Next diagnostic",
-		},
-		{
-			"<leader>tr",
-			"<cmd>Trouble prev<cr>",
-			desc = "Prev diagnostic",
-		},
-		{ "<leader>tf",
-			"<cmd>Trouble focus<cr>",
-			desc = "Focus trouble window"
-		}
   },
 }

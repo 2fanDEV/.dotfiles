@@ -41,8 +41,19 @@ return {
 						}
 					end,
 				},
-				vim.keymap.set('n', '<leader>f', '<cmd>:Format<CR>' ),
-				vim.keymap.set('n', '<leader>F', '<cmd>:FormatWrite<CR>'),
+				rust = {
+					require("formatter.filetypes.rust").rustfmt,
+					function()
+						return {
+							exe = "rustfmt",
+							args = { "--edition 2021" },
+							stdin = true,
+						}
+					end,
+				},
+
+				vim.keymap.set("n", "<leader>f", "<cmd>:Format<CR>"),
+				vim.keymap.set("n", "<leader>F", "<cmd>:FormatWrite<CR>"),
 				-- Use the special "*" filetype for defining formatter configurations on
 				-- any filetype
 				["*"] = {
