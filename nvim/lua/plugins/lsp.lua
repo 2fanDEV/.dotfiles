@@ -19,7 +19,7 @@ return {
 			enabled = true,
 		},
 	},
-	config = function()
+	config = function(_, opts)
 		vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
 		require("conform").setup({
 			formatters_by_ft = {},
