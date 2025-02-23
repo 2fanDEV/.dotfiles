@@ -14,8 +14,15 @@ map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
 -- Re-order to previous/next
 map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
 map("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
-keymap.set("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { silent = true })
+map("n", "ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
+-- LSPsaga
+map("n", "<A-K>", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+map("n", "<A-d>", '<cmd>Lspsaga term_toggle<CR>', opts)
+map("n", "<A-r>", '<cmd>Lspsaga rename<CR>', opts)
+
+-- LSPLens
+map("n", "<A-f>", "<cmd>LspLensToggle<CR>", opts)
 -- Goto buffer in position...
 map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
 map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
@@ -27,7 +34,6 @@ map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
 map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
 map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
 map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
-
 -- Pin/unpin buffer
 map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 
@@ -40,7 +46,6 @@ map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 
 -- Wipeout buffer
 --                 :BufferWipeout
-
 -- Close commands
 --                 :BufferCloseAllButCurrent
 --                 :BufferCloseAllButPinned
@@ -59,6 +64,9 @@ map("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
 map("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
 map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
+map("n", "<Space>do", "<Cmd>vim.diagnostic.open_float()<CR>", opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)

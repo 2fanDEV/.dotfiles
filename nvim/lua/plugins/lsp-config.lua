@@ -21,6 +21,10 @@ return {
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = cmp_lsp.default_capabilities()
+		capabilities.textDocument.foldingRange = {
+			dynamicRegistration = true,
+			lineFoldingOnly = true
+		}
 		vim.lsp.inlay_hint.enable(true, {bufnr = 0})
 		require("fidget").setup({})
 		require("mason").setup()
