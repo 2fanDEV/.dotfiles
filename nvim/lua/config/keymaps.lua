@@ -68,5 +68,3 @@ map("n", "<Space>do", "<Cmd>vim.diagnostic.open_float()<CR>", opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
