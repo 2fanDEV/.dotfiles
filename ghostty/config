@@ -1,0 +1,4 @@
+theme = GitHub-Dark-High-Contrast
+font-size = 12
+macos-option-as-alt = left
+macos-non-native-fullscreen = visible-menu
