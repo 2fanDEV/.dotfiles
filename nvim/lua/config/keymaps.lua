@@ -1,4 +1,6 @@
 local keymap = vim.keymap
+local api = vim.api
+
 keymap.set("n", "<Leader><Tab>", "<cmd>Neotree toggle<CR>", { silent = true })
 keymap.set({ "n" }, "<C-k>", function()
 	require("lsp_signature").toggle_float_win()
@@ -23,7 +25,7 @@ map("n", "<A-d>", "<cmd>Lspsaga term_toggle<CR>", opts)
 map("n", "<A-r>", "<cmd>Lspsaga rename<CR>", opts)
 
 -- LSPLens
-map("n", "<A-f>", "<cmd>LspLensToggle<CR>", opts)
+map("n", "<A-l>", "<cmd>LspLensToggle<CR>", opts)
 -- Goto buffer in position...
 map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
 map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
@@ -38,9 +40,8 @@ map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 -- Pin/unpin buffer
 map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 
--- Goto pinned/unpinned buffer
---                 :BufferGotoPinned
---                 :BufferGotoUnpinned
+-- FORMAT
+
 
 -- Close buffer
 map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
@@ -65,3 +66,7 @@ map("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
 map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
 map("n", "<Space>do", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
+
+-- Format conform 
+map("n", "<leader>Cf", "<Cmd>FormatConform<CR>", opts);
