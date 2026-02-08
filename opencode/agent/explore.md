@@ -15,7 +15,7 @@ description: >-
   assistant: "I'll use the codebase-web-navigator agent to examine our redis
   configuration and search for known issues with the library version on the
   web." </example>
-model: "github-copilot/claude-haiku-4.5"
+model: "anthropic/claude-haiku-4-5"
 mode: all
 tools:
   bash: false

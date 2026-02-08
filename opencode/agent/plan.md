@@ -12,7 +12,7 @@ description: >-
   the architect-planner to analyze the current structure and propose a migration
   path." <commentary>The user needs a plan, not immediate execution, making this
   the perfect time for the architect-planner.</commentary></example>
-model: "google/gemini-3-pro-preview"
+model: "anthropic/claude-opus-4-6"
 mode: primary
 tools:
   bash: false

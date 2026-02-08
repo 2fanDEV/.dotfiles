@@ -18,7 +18,7 @@ description: >-
   technical feature, which falls under this agent's expertise. </commentary>
   </example>
 mode: primary
-model: "google/gemini-3-flash-preview"
+model: "anthropic/claude-sonnet-4-5"
 permission:
     write: "ask"
     edit: "ask"
