@@ -30,6 +30,11 @@
       "kubectl * delete*": "deny",
       "mongosh *dropDatabase*": "deny",
       "mongosh *drop()*": "deny",
+			"git branch *": "allow",
+			"git branch -d *": "deny",
+			"git branch -D *": "deny", 
+			"git worktree *": "allow",
+
       "git commit *": "ask",
       "git status *": "allow",
       "git log *": "allow",
