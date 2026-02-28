@@ -5,7 +5,10 @@
     "edit": "deny",
     "grep": "allow",
     "list": "allow",
-    "task": "ask",
+    "task": {
+      "*": "ask",
+      "explore": "allow"
+    },
     "skill": "deny",
     "lsp": "allow",
     "todoread": "allow",
