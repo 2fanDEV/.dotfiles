@@ -41,7 +41,7 @@
     "plan": {
       "mode": "primary",
       "model": "opencode-go/glm-5",
-      "prompt": "{file:./prompts/plan.md}, {file:./memory/plan-memory.md}, {file:./memory/plan-mistakes.md}",
+      "prompt": "{file:./prompts/plan.md}",
       "temperature": 0.25,
       "permission": {
         "edit": {
@@ -58,7 +58,7 @@
       "mode": "primary",
       "temperature": 0.4,
       "model": "opencode-go/glm-5",
-      "prompt": "{file:./prompts/build.md}, {file:./memory/build-mistakes.md}, {file:./memory/build-memory.md}",
+      "prompt": "{file:./prompts/build.md}",
       "permission": {
         "edit": {
           "*": "allow",
