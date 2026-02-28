@@ -1,31 +1,119 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-gemini-auth@latest"],
-  "model": "anthropic/claude-sonnet-4-5",
+  "permission": {
+    "read": "allow",
+    "edit": "deny",
+    "grep": "allow",
+    "list": "allow",
+    "task": "ask",
+    "skill": "deny",
+    "lsp": "allow",
+    "todoread": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "bash": {
+      "*": "ask",
+      "terraform apply*": "deny",
+      "terraform * apply*": "deny",
+      "terraform destroy*": "deny",
+      "terraform * destroy*": "deny",
+      "rm -r*": "deny",
+      "rm * -r*": "deny",
+      "chmod -R*": "deny",
+      "chown *": "deny",
+      "aws *": "deny",
+      "kubectl delete*": "deny",
+      "kubectl * delete*": "deny",
+      "mongosh *dropDatabase*": "deny",
+      "mongosh *drop()*": "deny",
+      "git commit *": "ask",
+      "git status *": "allow",
+      "git log *": "allow",
+      "*||*": "ask",
+      "*&&*": "ask",
+      "*|*": "ask",
+      "*;*": "ask",
+      "***": "ask"
+    }
+  },
+  "agent": {
+    "plan": {
+      "mode": "primary",
+      "model": "opencode-go/glm-5",
+      "prompt": "{file:./prompts/plan.md}, {file:./memory/plan-memory.md}, {file:./memory/plan-mistakes.md}",
+      "temperature": 0.25,
+      "permission": {
+        "edit": {
+          "*": "deny",
+          "~/.config/opencode/memory/plan-mistakes.md": "allow",
+          "./memory/plan-mistakes.md": "allow",
+          "~/.config/opencode/memory/plan-memory.md": "allow",
+          "./memory/plan-memory.md": "allow"
+        }
+      },
+      "top_p": 0.3
+    },
+    "build": {
+      "mode": "primary",
+      "temperature": 0.4,
+      "model": "opencode-go/glm-5",
+      "prompt": "{file:./prompts/build.md}, {file:./memory/build-mistakes.md}, {file:./memory/build-memory.md}",
+      "permission": {
+        "edit": {
+          "*": "allow",
+          "./prompt/build.md": "deny"
+        },
+        "skill": "allow",
+        "task": "allow"
+      }
+    },
+    "brainstorm": {
+      "mode": "primary",
+      "temperature": 0.8,
+      "model": "opencode-go/minimax-m2.5",
+      "permission": {
+        "edit": "deny",
+        "skill": "allow",
+        "task": "allow"
+      }
+    },
+    "fast": {
+      "mode": "primary",
+      "model": "kimi-for-coding/k2p5",
+      "description": "Fast reasoning with limited iterations",
+      "prompt": "You are a quick thinker. Solve problems with minimal steps.",
+      "steps": 5
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5"
+    }
+  },
   "mcp": {
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp"
     },
-    "linear": {
-      "type": "local",
-      "command": ["npx", "-y", "mcp-remote", "https://mcp.linear.app/mcp"]
-    },
     "exa": {
+      "enabled": true,
       "type": "remote",
-      "url": "https://mcp.exa.ai/mcp",
-      "enabled": true
+      "url": "https://mcp.exa.ai/mcp"
     },
     "gh_grep": {
       "type": "remote",
       "url": "https://mcp.grep.app"
     },
-    "terraform-safe": {
+    "playwright": {
       "type": "local",
-      "command": [
-        "node",
-        "/Users/zapzap/.config/opencode/mcp-servers/terraform-safe/dist/index.js"
-      ]
+      "command": ["npx", "@playwright/mcp@latest"],
+      "enabled": true
+    },
+    "linear": {
+      "command": ["npx", "-y", "mcp-remote", "https://mcp.linear.app/mcp"],
+      "type": "local"
     }
-  }
+  },
+  "model": "anthropic/claude-sonnet-4-5",
+  "plugin": []
 }
