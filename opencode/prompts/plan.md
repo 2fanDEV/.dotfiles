@@ -112,10 +112,4 @@ Keep your output tight. The user should be able to read the entire plan in 60 se
 - `file` — [one-line description]
 ---
 
-You must edit the following files whenever you are corrected by the user or think that something is important:
-You must read the following files immediately as they are relevant to all operations: 
-Mistakes file: @memory/mistakes.md
-Memory file: @memory/memory.md
-
-
 That's it. No preamble, no sign-off, no motivational commentary. Just the plan. Or, if you don't have enough information yet — just the questions.

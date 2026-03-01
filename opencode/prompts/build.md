@@ -91,9 +91,3 @@ When you encounter ambiguity or a judgment call:
 5. Verify your changes work and do not break existing behavior.
 6. If tests exist, run them. If tests should exist for new code, write them.
 7. Present your changes to the user with a clear, concise explanation of what was done and why.
-8. Whenever you are corrected by the user read 
-
-You must edit the following files whenever you are corrected by the user or think that something is important:
-You must read the following files immediately as they are relevant to all operations: 
-Mistakes file: @memory/mistakes.md
-Memory file: @memory/memory.md

@@ -50,19 +50,12 @@
       "mode": "primary",
       "model": "opencode-go/glm-5",
       "prompt": "{file:./prompts/plan.md}",
-      "temperature": 0.25,
+      "temperature": 0.3,
       "permission": {
-        "read": {
-          " ~/.config/opencode/memory": "allow",
-          "./memory/*": "allow"
-        },
         "edit": {
-          "*": "ask",
-          "./memory/*": "allow",
-          "~/.config/opencode/memory/*": "allow"
+          "*": "ask"
         }
-      },
-      "top_p": 0.3
+      }
     },
     "build": {
       "mode": "primary",
@@ -71,8 +64,7 @@
       "prompt": "{file:./prompts/build.md}",
       "permission": {
         "edit": {
-          "*": "allow",
-          "./prompt/build.md": "ask"
+          "*": "allow"
         },
         "skill": "allow",
         "task": "allow"
@@ -81,6 +73,7 @@
     "brainstorm": {
       "mode": "primary",
       "temperature": 0.8,
+      "top_p": 0.8,
       "model": "opencode-go/minimax-m2.5",
       "permission": {
         "edit": "deny",
