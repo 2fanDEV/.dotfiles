@@ -30,10 +30,10 @@
       "kubectl * delete*": "deny",
       "mongosh *dropDatabase*": "deny",
       "mongosh *drop()*": "deny",
-			"git branch *": "allow",
-			"git branch -d *": "deny",
-			"git branch -D *": "deny", 
-			"git worktree *": "allow",
+      "git branch *": "allow",
+      "git branch -d *": "deny",
+      "git branch -D *": "deny",
+      "git worktree *": "allow",
 
       "git commit *": "ask",
       "git status *": "allow",
@@ -52,12 +52,14 @@
       "prompt": "{file:./prompts/plan.md}",
       "temperature": 0.25,
       "permission": {
+        "read": {
+          " ~/.config/opencode/memory": "allow",
+          "./memory/*": "allow"
+        },
         "edit": {
-          "*": "deny",
-          "~/.config/opencode/memory/plan-mistakes.md": "allow",
-          "./memory/plan-mistakes.md": "allow",
-          "~/.config/opencode/memory/plan-memory.md": "allow",
-          "./memory/plan-memory.md": "allow"
+          "*": "ask",
+          "./memory/*": "allow",
+          "~/.config/opencode/memory/*": "allow"
         }
       },
       "top_p": 0.3
@@ -70,7 +72,7 @@
       "permission": {
         "edit": {
           "*": "allow",
-          "./prompt/build.md": "deny"
+          "./prompt/build.md": "ask"
         },
         "skill": "allow",
         "task": "allow"
