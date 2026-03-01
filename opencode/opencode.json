@@ -48,7 +48,7 @@
   "agent": {
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/glm-5",
+      "model": "github-copilot/gpt-5.2-codex",
       "prompt": "{file:./prompts/plan.md}",
       "temperature": 0.3,
       "permission": {
@@ -60,7 +60,7 @@
     "build": {
       "mode": "primary",
       "temperature": 0.4,
-      "model": "opencode-go/glm-5",
+      "model": "github-copilot/gpt-5.2-codex",
       "prompt": "{file:./prompts/build.md}",
       "permission": {
         "edit": {
@@ -74,7 +74,7 @@
       "mode": "primary",
       "temperature": 0.8,
       "top_p": 0.8,
-      "model": "opencode-go/minimax-m2.5",
+      "model": "github-copilot/claude-opus-4.6",
       "permission": {
         "edit": "deny",
         "skill": "allow",
@@ -83,7 +83,7 @@
     },
     "fast": {
       "mode": "primary",
-      "model": "kimi-for-coding/k2p5",
+      "model": "github-copilot/claude-sonnet-4.6",
       "description": "Fast reasoning with limited iterations",
       "prompt": "You are a quick thinker. Solve problems with minimal steps.",
       "steps": 5
