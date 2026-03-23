@@ -1,55 +1,28 @@
-{
-  "$schema": "https://opencode.ai/config.json",
-  "permission": {
-    "read": "allow",
-    "edit": "deny",
-    "grep": "allow",
-    "list": "allow",
-    "task": {
-      "*": "ask",
-      "explore": "allow"
-    },
-    "skill": "deny",
-    "lsp": "allow",
-    "todoread": "allow",
-    "todowrite": "allow",
-    "webfetch": "allow",
-    "websearch": "allow",
-    "bash": {
-      "*": "ask",
-      "terraform apply*": "deny",
-      "terraform * apply*": "deny",
-      "terraform destroy*": "deny",
-      "terraform * destroy*": "deny",
-      "rm -r*": "deny",
-      "rm * -r*": "deny",
-      "chmod -R*": "deny",
-      "chown *": "deny",
-      "aws *": "deny",
-      "kubectl delete*": "deny",
-      "kubectl * delete*": "deny",
-      "mongosh *dropDatabase*": "deny",
-      "mongosh *drop()*": "deny",
-      "git branch *": "allow",
-      "git branch -d *": "deny",
-      "git branch -D *": "deny",
-      "git worktree *": "allow",
 
-      "git commit *": "ask",
-      "git status *": "allow",
-      "git log *": "allow",
-      "*||*": "ask",
-      "*&&*": "ask",
-      "*|*": "ask",
-      "*;*": "ask",
-      "***": "ask"
-    }
+  "$schema": "https://opencode.ai/config.json",
+  "disabled_providers": ["opencode"],
+  "$schema": "https://opencode.ai/config.json",
+  "logLevel": "WARN",
+  "autoupdate": false,
+  "share": "disabled",
+  "plugin": [],
+  "enabled_providers": ["github-copilot", "openai", "google"],
+  "instructions": [],
+  "mcp": {},
+  "permission": {
+    "websearch": "ask",
+    "codesearch": "ask",
+    "webfetch": "ask",
+    "skill": "ask",
+    "github": "ask"
+  },
+  "experimental": {
+    "openTelemetry": false
   },
   "agent": {
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/glm-5",
-      "prompt": "{file:./prompts/plan.md}",
+      "model": "openai/gpt-5.3-codex",
       "temperature": 0.3,
       "permission": {
         "edit": {
@@ -59,9 +32,8 @@
     },
     "build": {
       "mode": "primary",
-      "temperature": 0.4,
-      "model": "opencode-go/glm-5",
-      "prompt": "{file:./prompts/build.md}",
+      "temperature": 0.5,
+      "model": "openai/gpt-5.3-codex",
       "permission": {
         "edit": {
           "*": "allow"
@@ -70,38 +42,22 @@
         "task": "allow"
       }
     },
-    "brainstorm": {
-      "mode": "primary",
-      "temperature": 0.8,
-      "top_p": 0.8,
-      "model": "opencode-go/minimax-m2.5",
-      "permission": {
-        "edit": "deny",
-        "skill": "allow",
-        "task": "allow"
-      }
-    },
     "fast": {
       "mode": "primary",
-      "model": "kimi-for-coding/k2p5",
+      "model": "openai/gpt-5.3-codex",
       "description": "Fast reasoning with limited iterations",
       "prompt": "You are a quick thinker. Solve problems with minimal steps.",
       "steps": 5
     },
     "explore": {
       "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5"
+      "model": "openai/claude-haiku-4.5"
     }
   },
   "mcp": {
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp"
-    },
-    "exa": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.exa.ai/mcp"
     },
     "gh_grep": {
       "type": "remote",
@@ -117,6 +73,7 @@
       "type": "local"
     }
   },
-  "model": "anthropic/claude-sonnet-4-5",
+  "model": "openai/gpt-5.4",
+	"small_model": "openai/gpt-5-mini",
   "plugin": []
 }
