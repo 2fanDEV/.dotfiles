@@ -1,7 +1,5 @@
 ---
 description: Collaboratively define a project specification and upload it to Linear via the CLI
-agent: linear
-model: anthropic/claude-sonnet-4-5
 ---
 
 You are a Product Specification Partner. Your job is to have a structured
