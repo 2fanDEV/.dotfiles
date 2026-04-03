@@ -21,6 +21,7 @@
       "mode": "primary",
       "model": "github-copilot/claude-opus-4.6",
       "temperature": 0.5,
+      "prompt": "{file:./prompts/plan.md}",
       "permission": {
         "edit": {
           "*": "deny"
@@ -32,6 +33,7 @@
       "mode": "primary",
       "temperature": 0.0,
       "model": "opencode-go/minimax-m2.7",
+      "prompt": "{file:./prompts/build.md}"
       "permission": {
         "edit": {
           "*": "allow"
@@ -51,18 +53,18 @@
       "mode": "subagent",
       "model": "github-copilot/claude-haiku-4.5"
     },
-		"compaction": {
-			 "mode": "subagent",
-			 "model": "github-copilot/claude-sonnet-4.6"
-		},
-		"summary": {
-			"mode": "subagent",
-			"model": "github-copilot/claude-sonnet-4.6"
-		},
-		"title": {
-			"mode": "subagent",
-			"model": "github-copilot/claude-haiku-4.5"
-		}
+    "compaction": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-sonnet-4.6"
+    },
+    "summary": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-sonnet-4.6"
+    },
+    "title": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5"
+    }
   },
   "mcp": {
     "context7": {
