@@ -1,0 +1,54 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-cmd-shift-t": "terminal_panel::Toggle"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-n": "editor::GoToNextReference"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-p": "editor::GoToPreviousReference"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-shift-s": "editor::InsertSnippet"
+    }
+  },
+  {
+    "context": "!ContextEditor && !AcpThread > Editor && mode == full",
+    "bindings": {
+      "cmd-shift-i": "editor::ToggleInlayHints"
+    }
+  },
+  {
+    "context": "!ContextEditor && !AcpThread > Editor && mode == full",
+    "unbind": {
+      "ctrl-:": "editor::ToggleInlayHints"
+    }
+  }
+]

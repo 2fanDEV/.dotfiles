@@ -1,8 +1,9 @@
 gh/
 git/
-zed/
 raycast/
 linear/
 acli/
 configstore/
 uv/
+.DS_Store
+*/.DS_Store

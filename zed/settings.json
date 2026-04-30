@@ -1,0 +1,59 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "languages": {
+    "Rust": {
+      "tab_size": 3
+    }
+  },
+  "which_key": {
+    "enabled": true
+  },
+  "preview_tabs": {
+    "enable_preview_multibuffer_from_code_navigation": true
+  },
+  "double_click_in_multibuffer": "open",
+  "expand_excerpt_lines": 4,
+  "excerpt_context_lines": 4,
+  "outline_panel": {
+    "dock": "left",
+    "expand_outlines_with_depth": 110
+  },
+  "tabs": {
+    "show_diagnostics": "all"
+  },
+  "relative_line_numbers": "enabled",
+  "ensure_final_newline_on_save": false,
+  "inlay_hints": {
+    "enabled": true
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": "Vercel Dark"
+}
