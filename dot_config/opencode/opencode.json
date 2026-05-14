@@ -52,7 +52,7 @@
     },
     "title": {
       "mode": "subagent",
-      "model": "gopenai/gpt-5.4-mini"
+      "model": "openai/gpt-5.4-mini"
     }
   },
   "mcp": {
