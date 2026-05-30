@@ -4,6 +4,7 @@
   "autoupdate": false,
   "share": "disabled",
   "enabled_providers": [
+		"opencode",
     "opencode-go",
     "google",
     "openai"
