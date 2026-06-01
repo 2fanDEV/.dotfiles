@@ -23,7 +23,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/kimi-2.6",
+      "model": "opencode-go/kimi-k2.6",
       "permission": {
         "read": "allow",
         "edit": {
