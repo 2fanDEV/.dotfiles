@@ -23,7 +23,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/glm-5.2",
       "permission": {
         "read": "allow",
         "edit": {
@@ -73,6 +73,6 @@
       "type": "local"
     }
   },
-	"model": "opencode-go/deepseek-v4-pro",
+	"model": "opencode-go/glm-5.2",
   "small_model": "openai/gpt-5.4-mini"
 }
