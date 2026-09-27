@@ -62,21 +62,11 @@
         "@playwright/mcp@latest"
       ],
       "enabled": true
-    },
-    "linear": {
-      "command": [
-        "npx",
-        "-y",
-        "mcp-remote",
-        "https://mcp.linear.app/mcp"
-      ],
-      "type": "local"
     }
   },
 	"model": "opencode-go/glm-5.2",
   "small_model": "openai/gpt-5.4-mini",
 	"plugin": [
-		"@dietrichgebert/ponytail",
-		"@tarquinen/opencode-dcp"
+		"/Users/2fan/Projects/codex-jev-hook/dist/opencode.mjs"
 	]
 }
