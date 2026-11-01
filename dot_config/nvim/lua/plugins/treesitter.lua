@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "master",
 	build = ":TSUpdate",
 	opts = {
 		ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "rust" },
@@ -9,6 +10,6 @@ return {
 	},
 	config = function(_, opts)
 		local configs = require("nvim-treesitter.configs")
-		configs.setup({opts})
+		configs.setup(opts)
 	end,
 }

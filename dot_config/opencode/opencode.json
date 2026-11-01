@@ -1,72 +1,63 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "logLevel": "WARN",
-  "autoupdate": false,
+  "update": "disable",
   "share": "disabled",
-  "enabled_providers": [
-		"opencode",
-    "opencode-go",
-    "google",
-    "openai"
-  ],
+  "model": "openai/gpt-6-sol",
   "instructions": [],
-  "permission": {
-    "websearch": "allow",
-    "codesearch": "allow",
-    "webfetch": "allow",
-    "skill": "allow",
-    "github": "ask"
-  },
   "experimental": {
-    "openTelemetry": false
+    "policies": [
+      { "action": "provider.use", "resource": "*", "effect": "deny" },
+      { "action": "provider.use", "resource": "opencode", "effect": "allow" },
+      { "action": "provider.use", "resource": "opencode-go", "effect": "allow" },
+      { "action": "provider.use", "resource": "google", "effect": "allow" },
+      { "action": "provider.use", "resource": "openai", "effect": "allow" }
+    ]
   },
-  "agent": {
+  "permissions": [
+    { "action": "websearch", "resource": "*", "effect": "allow" },
+    { "action": "codesearch", "resource": "*", "effect": "allow" },
+    { "action": "webfetch", "resource": "*", "effect": "allow" },
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "github", "resource": "*", "effect": "ask" }
+  ],
+  "agents": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/glm-5.2",
-      "permission": {
-        "read": "allow",
-        "edit": {
-          "*": "allow"
-        },
-        "skill": "allow",
-        "task": "allow"
-      }
+      "model": "openai/gpt-6-sol",
+      "permissions": [
+        { "action": "read", "resource": "*", "effect": "allow" },
+        { "action": "edit", "resource": "*", "effect": "allow" },
+        { "action": "skill", "resource": "*", "effect": "allow" },
+        { "action": "subagent", "resource": "*", "effect": "allow" }
+      ]
     },
     "explore": {
       "mode": "subagent",
-      "model": "openai/gpt-5.4-mini"
+      "model": "openai/gpt-6-luna"
     },
     "summary": {
       "mode": "subagent",
-      "model": "openai/gpt-5.4-mini"
+      "model": "openai/gpt-6-luna"
     },
     "title": {
       "mode": "subagent",
-      "model": "openai/gpt-5.4-mini"
+      "model": "openai/gpt-6-luna"
     }
   },
   "mcp": {
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
-    },
-    "gh_grep": {
-      "type": "remote",
-      "url": "https://mcp.grep.app"
-    },
-    "playwright": {
-      "type": "local",
-      "command": [
-        "npx",
-        "@playwright/mcp@latest"
-      ],
-      "enabled": true
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "gh_grep": {
+        "type": "remote",
+        "url": "https://mcp.grep.app"
+      },
+      "playwright": {
+        "type": "local",
+        "command": ["npx", "@playwright/mcp@latest"]
+      }
     }
-  },
-	"model": "opencode-go/glm-5.2",
-  "small_model": "openai/gpt-5.4-mini",
-	"plugin": [
-		"/Users/2fan/Projects/codex-jev-hook/dist/opencode.mjs"
-	]
+  }
 }

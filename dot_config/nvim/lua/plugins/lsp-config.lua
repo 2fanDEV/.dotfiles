@@ -62,7 +62,6 @@ return {
 			ensure_installed = ensure_installed,
 		})
 
-		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		capabilities.textDocument.inlayHint = { dynamicRegistration = true }
 
@@ -80,10 +79,11 @@ return {
 		end
 
 		for server_name, server_config in pairs(servers) do
-			lspconfig[server_name].setup(vim.tbl_deep_extend("force", {
+			vim.lsp.config(server_name, vim.tbl_deep_extend("force", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			}, server_config))
+			vim.lsp.enable(server_name)
 		end
 
 		vim.lsp.handlers["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
